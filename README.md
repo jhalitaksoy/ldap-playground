@@ -10,3 +10,10 @@ docker compose up
 ```bash
 docker-compose down -v
 ```
+### How to connect
+
+```bash
+localhost:388
+cn=admin,dc=example,dc=org 
+admin
+```
