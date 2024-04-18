@@ -1,24 +1,48 @@
-dn: ou=users,dc=example,dc=org
-changetype: add
-objectClass: organizationalUnit
-ou: users
+
+### Groups ###
 
 dn: ou=groups,dc=example,dc=org
 changetype: add
 objectClass: organizationalUnit
 ou: groups
 
-dn: cn=admin,ou=groups,dc=example,dc=org
+dn: cn=group1,ou=groups,dc=example,dc=org
+changetype: add
+objectClass: groupOfNames
+cn: group1
+member: cn=halit,ou=users,dc=example,dc=org
+
+dn: cn=group2,ou=groups,dc=example,dc=org
+changetype: add
+objectClass: groupOfNames
+cn: group2
+member: cn=halit2,ou=users,dc=example,dc=org
+
+### Roles ###
+
+dn: ou=roles,dc=example,dc=org
+changetype: add
+objectClass: organizationalUnit
+ou: roles
+
+dn: cn=admin,ou=roles,dc=example,dc=org
 changetype: add
 objectClass: groupOfNames
 cn: admin
 member: cn=halit,ou=users,dc=example,dc=org
 
-dn: cn=developer,ou=groups,dc=example,dc=org
+dn: cn=developer,ou=roles,dc=example,dc=org
 changetype: add
 objectClass: groupOfNames
 cn: developer
 member: cn=halit2,ou=users,dc=example,dc=org
+
+### Users ###
+
+dn: ou=users,dc=example,dc=org
+changetype: add
+objectClass: organizationalUnit
+ou: users
 
 dn: cn=halit,ou=users,dc=example,dc=org
 changetype: add
@@ -32,6 +56,7 @@ displayName: Halit Aksoy
 userPassword: 1234
 mail: jhalitaksoy2@gmail.com
 memberOf: cn=admin,ou=groups,dc=example,dc=org
+memberOf: cn=group2,ou=groups,dc=example,dc=org
 
 dn: cn=halit2,ou=users,dc=example,dc=org
 changetype: add
@@ -45,3 +70,4 @@ displayName: Halit2 Aksoy
 userPassword: 1234
 mail: halit@appcircle.io
 memberOf: cn=developer,ou=groups,dc=example,dc=org
+memberOf: cn=group1,ou=groups,dc=example,dc=org
