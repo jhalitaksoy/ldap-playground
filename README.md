@@ -16,5 +16,5 @@ admin
 ### How to reset
 
 ```bash
-docker-compose down -v
+docker compose down -v
 ```

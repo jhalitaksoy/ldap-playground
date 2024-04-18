@@ -10,48 +10,38 @@ ou: groups
 
 dn: cn=admin,ou=groups,dc=example,dc=org
 changetype: add
-objectClass: posixGroup
+objectClass: groupOfNames
 cn: admin
-gidNumber: 5000
+member: cn=halit,ou=users,dc=example,dc=org
 
 dn: cn=developer,ou=groups,dc=example,dc=org
 changetype: add
-objectClass: posixGroup
+objectClass: groupOfNames
 cn: developer
-gidNumber: 5000
+member: cn=halit2,ou=users,dc=example,dc=org
 
-dn: uid=halit,ou=users,dc=example,dc=org
+dn: cn=halit,ou=users,dc=example,dc=org
 changetype: add
 objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
+objectClass: organizationalPerson
+objectClass: person
 uid: halit
 sn: Aksoy
 givenName: Halit
-cn: Halit Aksoy
 displayName: Halit Aksoy
-uidNumber: 10000
-gidNumber: 5000
 userPassword: 1234
-gecos: Halit Aksoy
-loginShell: /bin/bash
-homeDirectory: /home/john
-mail: jhalitaksoy@gmail.com
+mail: jhalitaksoy2@gmail.com
+memberOf: cn=admin,ou=groups,dc=example,dc=org
 
-dn: uid=halit2,ou=users,dc=example,dc=org
+dn: cn=halit2,ou=users,dc=example,dc=org
 changetype: add
 objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
+objectClass: organizationalPerson
+objectClass: person
 uid: halit2
 sn: Aksoy
 givenName: Halit2
-cn: Halit2 Aksoy
 displayName: Halit2 Aksoy
-uidNumber: 10000
-gidNumber: 5000
 userPassword: 1234
-gecos: Halit2 Aksoy
-loginShell: /bin/bash
-homeDirectory: /home/john
 mail: halit@appcircle.io
+memberOf: cn=developer,ou=groups,dc=example,dc=org
