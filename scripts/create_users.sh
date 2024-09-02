@@ -30,7 +30,6 @@ for ((i=0; i<n; i++)); do
   echo "displayName: user$i surname" >> "$output_file"
   echo "userPassword: 1234" >> "$output_file"
   echo "mail: user$i@mail.org" >> "$output_file"
-  echo "cn: user$i@mail.org" >> "$output_file"
   echo "memberOf: cn=commonGroup,ou=groups2,dc=example,dc=org" >> "$output_file"
   echo "" >> "$output_file"  # Add a blank line between entries
 
